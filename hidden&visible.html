@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可见性过滤/选择器</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        .outter{
+            width:300px;
+            height:300px;
+            background-color: red;
+        }
+        .inner{
+            width:70px;
+            height:70px;
+            background-color: blue;
+           <!-- display:none;  此时inner为隐藏元素 -->
+        }
+    </style>
+</head>
+<body>
+
+<div class="outter">
+    <div class="inner">hidder!</div>
+</div>
+
+<script>
+    //hidden Selector:   $(":hidden") 选择所有隐藏的元素
+        //元素被认为是隐藏的情况：  他们的CSS display是none、他们是type="hidden"的表单元素
+                //它们的宽度和高度都设置为0、一个祖先元素的隐藏的，因此该元素是不会在页面上显示的
+/*
+    $(function(){
+        //检测是否有隐藏元素  有了将隐藏元素显示出来
+        $(".outter .inner:hidden").css("display","block");
+    })*/
+
+    //visible Selector： $(":visible")  选择所有可见的元素
+        //元素占据文档中一定的空间，元素被认为是可见的 可见元素的高度或宽度都大于0
+            //元素的 visibility:hidden  或 opacity:0被认为是可见的 因为他们仍然占用空间布局
+    $(function(){
+        //检测inner是否可见 如果可见则隐藏
+        $(".outter .inner:visible").css("display","none");
+    })
+
+</script>
+</body>
+</html>

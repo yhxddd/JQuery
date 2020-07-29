@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历——过滤</title>
+    <script src="jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+<!--<ul>
+    <li>li 1</li>
+    <li>li 2</li>
+    <li>li 3</li>
+    <li>
+        <strong>s1</strong>
+    </li>
+    <li>li 4</li>
+</ul>   eq---filter使用 -->
+<ul>
+    <li>list1<strong>item 1</strong></li>
+    <li>list2<span>item 2</span></li>
+    <li>list3</li>
+    <li>list4</li>
+</ul>
+
+<div id="id1">div1</div>
+<div id="id2">div2</div>
+<div id="id3">div3</div>
+<div id="id4">div4</div>
+<script>
+    //.eq() 定位到匹配元素指定的索引的元素 可以为正可以为负
+         //正值从0开始  负值从 -1开始 -2. -3.。。
+    /*$(function(){
+        $("li").eq(1).css("background-color","red");
+        //定位到li 2 改变背景颜色   也可以：eq(-3)
+    })
+
+    //filter() 筛选元素集合中匹配表达式 或通过传递函数测试的那些元素集合
+        //可定位多个元素
+    $(function(){
+        $("li").filter(":even").css("background-color","red");
+        //:even 定位偶数 从0开始
+    })
+
+    //first(): 获取匹配元素中第一个元素 不接收参数
+    //last()                最后一个元素
+
+    //has() 筛选匹配元素集合中的那些有相匹配的选择器或DOM 元素的后代元素
+    //选择包含strong标签的 li标签
+    $(function(){
+        $("li").has("strong").css("border","1px solid green");
+    })
+
+    //is ()  判断当前匹配元素集合中的元素是否为一个选择器、DOM元素、jQuery对象 如果这些元素至少匹配一个给定的参数那么返回true
+    //通常回调使用
+    //ul绑定点击事件 只有在点击项目本身的时候才触发 点击子元素时不会被触发
+    // 即点击 list1  list2 3  空白处 会触发  item1 2 不会触发
+    $(function(){
+        $("ul").click(function(event){
+            var target=$(event.target);
+            if(target.is("li")){
+                target.css("background-color","yellow");
+            }
+        })
+    })*/
+
+
+    //.not() 从匹配元素中移除指定元素
+        //不是 什么 的时候给定一个方法
+    /*   $(function(){
+           //不是奇数的li标签 添加css样式
+           $("li").not(":odd").css("background-color","yellow");
+       })
+
+       //map():通过一个函数匹配当前集合中的每个元素，产生一个包含jQuery对象
+       /*
+       $(function(){
+          /* 遍历打印出每个div的id
+          $("div").map(function(){
+               console.log(this.id);
+           });
+          //对数组进行操作返回一个新得数组
+           var arr=[0,1,2,3];
+           console.log(arr.map(function(n){
+               return n+4;
+           }))
+       })*/
+
+    //slice() 根据指定下标范围 过滤匹配的元素集合 并生成一个新得jQuery对象
+    $(function(){
+        //接收两个参数； start 起始下标 0开始 如果是负数表示从末尾开始
+        //              end   结束下标  包含首不包含尾
+        //[start,end)
+        $("li").slice(1,3).css("background-color","green");
+    })
+
+</script>
+</body>
+</html>

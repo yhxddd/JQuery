@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特效----自定义</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background-color:#5bc0de;
+            position:absolute;
+        }
+        button{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button>停止动画</button>
+<script>
+    //animate 根据一组CSS属性执行自定义动画
+   /* $(function(){
+        $("div").click(function(){
+            $(this).animate({
+                //动画定义时 只能写数字类型的参数 不能使用background-color
+                opacity:0.2,width:400,left:100
+            }),"2000","swing",function(){
+                alert("动画执行完毕");
+            }
+        })
+    })*/
+
+    //clearQueue() 从列队中移除左右未执行的项
+        //执行完正在执行的 移除未执行的
+    $(function(){
+        var div=$("div");
+        div.click(function(){
+            $(this).animate({
+                width:"500px",opacity:0.2,left:200
+            },2000,"linear").delay(5000);
+                //延时4秒后执行第二个动画
+            $(this).animate({
+                width:200,opacity:1,left:8
+            },2000,"swing",function(){
+                alert("动画执行完毕")
+            });
+            $("button").click(function(){
+                //div.clearQueue();//可以接收一个 动画名称 的参数 也可以不接受参数
+               // div.finish(); //立刻停止并跳到动画执行完毕的状态
+                div.stop();//停止到点击的状态
+            })
+        })
+    })
+    //delay() 设置一个延时来推迟执行队列中后续的项
+
+    //finish() 停止当前正在运行的动画 删除所有排队的动画 并完成匹配元素所有的动画
+
+    //stop() 停止匹配元素当前正在运行的动画
+
+</script>
+</body>
+</html>

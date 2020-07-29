@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入门案例</title>
+    <script src="jquery-3.5.1.min.js"></script>
+
+    <style>
+        p{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<p>哈哈哈哈</p>
+<p>hanhan</p>
+
+<script>
+    //基础语法:
+    //$(selector).action() :选择符selector “查询”和“查找”HTML元素  action（）：执行对元素的操作
+
+    $(document).ready(function(){
+
+        //alert("文档加载完毕");
+        $("p").click(function(){
+            $(this).hide(); //点击到哪个P标签哪个就隐藏
+
+        })
+    });
+</script>
+
+</body>
+</html>

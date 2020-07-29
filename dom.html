@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM属性</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        .pc{
+            color: #2aabd2;
+        }
+    </style>
+
+</head>
+<body>
+<!--<p>hhhhhhhh</p>-->
+<a>baidu</a>
+<p name="namea">xixi</p>
+<div></div>
+<h1 class="h11"></h1>
+<input type="text" value="xuanze">
+<script>
+    //.addClass(className): 为每个匹配的元素添加指定的样式类名
+  /*  $(function(){
+        $("p").addClass("pc");
+    })*/
+
+    //.attr(attributeName)：获取匹配的元素集合中的第一个元素的属性的值
+    //可以有一个参数 可以两个参数
+    $(function(){
+        $("a").attr("href","http://www.baidu.com");
+        var name=$("p").attr("name");//获取p标签的name属性值
+        $("div").text(name);//将空div的内容设置为name
+    })
+
+    //.hasClass(className):确定一个元素是否有指定的类
+    $(function(){
+        console.log($("h1").hasClass("h11"));//true
+        console.log($("h1").hasClass("aa"));//false
+    })
+
+    //.html()：获取集合中第一个匹配元素的HTML内容（没有参数） 设置元素的html内容（一个参数）
+    $(function(){
+        //alert($("a").html());//baidu
+        $("a").html("nima"); //修改a标签的内容
+    })
+
+
+    //.prop(propertyName): 获取匹配的元素集合中第一个元素的属性值 也可以修改或设置属性
+    //也可以有两个参数： 属性名，对应属性值
+    //只能获取已有的或默认的属性
+    $(function(){
+        //alert($("input").prop("value"));
+        console.log($("input").prop("value","select"));
+    })
+
+    //removeAttr(attributeName)：为元素移出一个属性
+    $(function(){
+        $("a").removeAttr("href");
+    })
+    //removeClass(className):移出添加的类名 删除class后面的类名
+
+    //.toggleClass(classname):匹配元素有这个类则删除 没有则添加
+    //.val()：获取元素集合中第一个元素的当前值，设置每个元素的值 一般用于表单元素
+    $(function(){
+       alert( $("input").val());
+    })
+
+</script>
+</body>
+</html>

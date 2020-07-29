@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>树遍历的prev方法</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        div{
+            width:40px;
+            height:40px;
+            margin-left:10px;
+            float:left;
+            border:1px solid blue;
+        }
+        button{
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div id="start"></div>
+<div></div>
+<button>go to prev</button>
+
+<script>
+    $(function(){
+        var start=$("#start");
+        start.css("background-color","pink");
+        $("button").click(function(){
+            start=start.prev();
+            $("div").css("background-color","");
+            start.css("background-color","pink");
+        })
+    })
+</script>
+</body>
+</html>

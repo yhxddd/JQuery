@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<ul class="topnav">
+    <!--为ul所有直接的子元素加上边框-->
+    <li>li1</li>
+    <li>
+        li2
+        <ul>
+            <li>next l1</li>
+            <li>next l2</li>
+            <li>next l3</li>
+        </ul>
+    </li>
+    <li>li3</li>
+</ul>
+
+<span id="prev">span1</span>
+<div>div1</div>
+<div>div2</div>
+<div>
+    div3
+    <div>div4</div>
+</div>
+
+<script>
+    //子元素选择器：  $("parent>child")  选择所有指定parent元素中指定的child的直接子元素
+            // parent:任何有效选择器  child用来筛选子元素的选择器
+   /*
+    $(function(){//相当于加载文档
+
+        $(".topnav>li").css("border","1px solid red");
+    })*/
+
+
+    //后代选择器：    $("ancestor descendant")选择给定的祖先元素（ancestor）的所有后代元素（descendant）
+            //ancestor 任何有效选择器   descendant筛选后代元素的选择器
+   /*
+    $(function(){//相当于加载文档
+
+        $(".topnav li").css("border","1px solid red");
+    })
+*/
+
+    //相邻选择器：  $("prev + next") 选择紧接在prev元素后的next元素
+   /*
+    $(function(){//相当于加载文档
+
+        $("li + li").css("border","1px solid blue");
+    })
+*/
+
+    //兄弟选择器： $("prev~siblings")匹配prev元素之后的所以兄弟元素。具有相同的父元素，并匹配过滤siblings选择器
+            //siblings一个选择器来过滤第一选择器以后的兄弟元素
+    $(function(){
+        $("#prev~div").css("border","1px solid yellow");
+    })
+</script>
+</body>
+</html>

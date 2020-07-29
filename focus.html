@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:focus </title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        .focused{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <input tabindex="1">
+    <input tabindex="2">
+    <select tabindex="3">
+        <option>select menu</option>
+    </select>
+    <div tabindex="4">
+        a div
+    </div>
+</div>
+<script>
+
+    $(function(){
+
+        $("#content").delegate("*","focus blur",function(event){
+            var e=$(this);
+            setTimeout(function(){
+                e.toggleClass("focused",e.is(":focus"));
+            },0);
+        });//给指定元素添加一个或多个事件
+    })
+    //点击输入框或标签 输入框会变为蓝色
+</script>
+</body>
+</html>

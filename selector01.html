@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础选择器</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div>
+        <span></span>
+        <p class="pp"></p>
+        <label></label>
+        <h4 id="hh"></h4>
+        <a>哈哈哈</a>
+        <b>嘻嘻</b>
+    </div>
+<script>
+
+    //AllSelector("*")语法：  $("*")  获取的是所有元素
+    /*
+  $(function(){
+        // $(document).ready(function(){})的缩写
+         $("div *").html("我们是一家人");
+         //选择div中所有标签（div下的所有子元素） 为其添加内容 .html()方法就是添加内容
+    });
+
+*/
+    //类选择器Class Selector(".class")语法: $(".class") 选择给定样式类名的所有元素
+    $(function(){
+        $(".pp").html("who are you");
+    })
+
+    //元素选择器Element Selector语法： $("element") 根据给定（html）标记名称选择所有的元素
+    $(function(){
+        $("span").html("I want you");
+    })
+
+    //ID选择器语法： $("#id") 选择一个具有给定id属性的单个元素
+    $(function(){
+        $("#hh").html("I like you");
+    })
+
+    //Multiple Selector语法:    $("selector1,selector2,selectorN") 将每一个选择器匹配到的元素合并后一起返回
+    $(function(){
+        $("span,.pp,#hh").html("嘤嘤嘤");//将span .pp  #hh 标签内容都替换为嘤嘤嘤
+    })
+
+</script>
+</body>
+
+</html>

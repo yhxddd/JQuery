@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容过滤</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+
+<div>John R</div>
+<div>gggg R</div>
+<div>Malcom John Sinclair</div>
+<div>J.0hn</div>
+<script>
+
+    //:contains() Selector:  $(":contains(text)")
+    //选择所有包含指定文本的元素
+    //text:用来查找的一个文本字符串，区分大小写，匹配的文本可以直接出现在所选的元素中，或在该元素的任何后代中，或两者兼有
+    $(function() {
+        $("div:contains('John')").css("text-decoration", "underline");
+        //找出所有内容中带"John"的标签内容，加上下划线
+    })
+
+
+    //:empty Selector:  $(":empty")
+    //选择所有没有子元素的元素（包括文本节点）
+    //没有文本的元素也选中
+
+    //:has() Selector:   $(":has(selector)")
+    //选择元素其中至少包含指定选择器匹配的一种元素
+
+    //:parent Selector:   $(":parent")
+    //选择所有含有子元素或者文本的父级元素
+
+</script>
+</body>
+</html>

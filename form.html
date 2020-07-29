@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        textarea{
+            height:35px;
+        }
+        div{
+            color:red;
+        }
+        fieldset{
+            margin:0;
+            padding:0;
+            border-width:0;
+        }
+        .marked{
+            background-color: yellow;
+            border:3px solid red;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <input type="button" value="Input Button"/>
+        <input type="checkbox" />
+        <input type="file" />
+        <input type="hidden" />
+        <input type="image" />
+        <input type="password" />
+        <input type="radio"/>
+        <input type="reset"/>
+        <input type="submit"/>
+        <input type="text" />
+        <select><option>option</option></select>
+        <textarea></textarea>
+        <button>Button</button>
+        <input name="email" disabled="disabled"/>
+        <input name="id"/>
+
+    </fieldset>
+</form>
+<div></div>
+
+<script>
+        //:button Selector:  $(":button")选择所有阿牛元素和类型为按钮的元素
+
+        //:checkbox Selector:  $(":checkbox")选择所有类型为复选框的元素
+
+        //:checked Selector: $(":checked")匹配所有勾选的元素
+
+        //:disabled Selector: $(":disabled")选择所有被禁用的元素
+
+        //:enabled Selector: $(":enabled")选择所有可用的(未被禁用的)元素
+
+        //:file Selector: $(":file")选择所有类型为文件的元素
+
+        //:focus Selector: $(":focus")选择当前获取焦点的元素
+
+        //:image Selector：  $(":image")
+
+        //$(":input"):选择所有 input textarea select button 元素
+
+        //$(":password")
+
+        //$(":radio")
+
+        //$(":submit")
+
+    $(function(){
+       /* //选择相应的元素  加上marked类选择器的样式
+        var input1=$(":button").addClass("marked");
+        var input2=$("input:image").addClass("marked");
+        var input3=$(":input").addClass("marked");
+*/
+        //选择被禁用的元素
+        $("input:disabled").val("haha");
+    })
+</script>
+</body>
+</html>

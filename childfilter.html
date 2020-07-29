@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子元素过滤</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        .s1green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>s1</span>
+    <span>s1</span>
+    <span>s1</span>
+</div>
+<div>
+    <span>s1</span>
+    <span>s1</span>
+    <span>s1</span>
+</div>
+<div>
+    <span>s1</span>
+    <span>s1</span>
+    <span>s1</span>
+</div>
+
+<script>
+    //:first-child Selector:  $(":first-child")
+    //选择所有父级元素下的第一个子元素
+    $(function(){
+        $("div span:first-child").css("text-decoration","underline").hover(function(){
+            $(this).addClass("s1green");
+            },function(){
+            $(this).removeClass("s1green");
+            //div下的第一个span子元素 加下划线 悬停时字体背景颜色变为绿色，移开时恢复
+        });
+
+    })
+    //:last-child Selector:  $(":last-child")
+    //选择所有父级元素下的最后一个子元素
+
+    //:first-of-type Selector: $(":first-of-type")
+    //选择所有相同的元素名称的第一个兄弟元素
+
+    //:last-of-type Selector: $(":last-of-type")
+    //选择的所有元素之间具有相同元素名称的最后一个兄弟元素
+
+    //:nth-child() Selector:  $(":nth-child(index/even/odd/equation)")
+    //选择她们所有父元素的第n个子元素
+</script>
+</body>
+</html>

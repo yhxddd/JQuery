@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件处理</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        p{
+            width:300px;
+            background-color: #2aabd2;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">button</button>
+<ul>
+<li>li 1</li>
+<li>li 2</li>
+<li>li 3</li>
+<li>li 4</li>
+</ul>
+<div>
+    <p>hhhhhhh</p>
+</div>
+<script>
+    //on()事件： 在选定的元素上绑定一个或多个处理事件
+    // bind、 delegate 都可以用on事件代替
+  /*  $(function(){
+        $("#btn").on("click",function(){
+            alert("haha");
+        })
+        //on 做事件绑定时三个参数： 事件类型 绑定元素 处理函数
+        $("ul").on("click","li",function(){
+            alert($(this).html());
+        })
+    })*/
+
+  //off()事件：移出通过on指定的事件 可以移出指定的 也可以全部
+    var fn=function(){
+        alert('hhhh');
+    };
+    $("div").on("click mouseover","p",fn);
+    $("div").off("mouseover","p",fn);// 移出鼠标放进元素的事件
+    //off()不填则表示 移出所有事件
+</script>
+</body>
+</html>

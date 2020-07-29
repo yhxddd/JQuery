@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器事件</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        p{
+            width:100%;
+            height:3000px;
+        }
+    </style>
+</head>
+<body>
+<!--<img src="hh">-->
+
+<p>hhhhh</p>
+<script>
+    //浏览器事件： error()被弃用的出现错误的事件
+   /* $(function(){
+        $("img").error(function(){
+            alert("error!");
+        });
+    })*/
+
+    //            resize() 改变页面大小 window绑定
+    $(window).resize(function(){
+        alert("页面大小改变了");
+    })
+    //            scroll() 滚动事件 滑动页面触发 可以给很多元素绑定 window\siv等
+    $(window).scroll(function(){
+        alert("hahaha");
+    })
+
+
+
+    //文档加载事件
+        //ready事件：在DOM结构绘制完成后就执行
+            //三种写法：
+            $().ready(function(){
+            });
+            $(document).ready(function(){
+            });
+            $(function(){
+            })
+        //load事件:在网页中所以内容全部加载完毕后才被执行
+
+
+    //文档加载顺序：
+    //  解析html结构、加载外部脚本和样式表文件、解析并执行脚本代码、
+    //          构造DOM结构（ready）、加载图片等外部文件、页面加载完毕 load
+</script>
+</body>
+</html>

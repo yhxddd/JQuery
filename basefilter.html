@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础过滤</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: aqua;
+            float:left;
+            border:1px solid #aaaaaa;
+            margin:0 5px;
+        }
+        .colored{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button id="run">run</button>
+    <div></div>
+    <div id="mover"></div>
+    <div></div>
+<script>
+    //:animated Selector语法：  $(":animated")
+    //选择所有正在执行动画效果的元素
+    $(function(){
+        $("#run").click(function(){
+            $("div:animated").toggleClass("colored");
+        });
+        function animatedIt(){
+            $("#mover").slideToggle("slow",animatedIt);//slow延时 600ms
+        //用滑动动画显示/隐藏一个元素
+        }
+        animatedIt();
+    })
+
+
+
+    //:eq() Selector 语法：
+    //          $(":eq(index)") :index 要匹配的元素的索引值（从0开始计数）
+    //          $(":eq(-index)"): -index 要匹配元素的索引值（从0开始计数），从最后一个元素开始倒计数
+
+    //:even Selector 语法：    $(":even")
+    //选择索引值为偶数的元素，从0开始计数，也可以查看odd(奇数)
+    //基于0的索引，所以 :even选择器是 第一元素，第三个元素
+
+    //:first Selector 语法：    $(":first")
+    //选择第一个匹配的元素
+
+    //:focus Selector 语法：   $(":focus")
+    //选择当前获取焦点的元素
+        //例：focus.html
+
+    //:header Selector 语法:   $(":header")
+    //选择所有标题元素 h1、h2...
+
+    //:last Selector 语法： $(":last")
+    //选择最后一个匹配的元素
+
+    //:gt() Selector 语法： $(":gt(index)")或 $(":gt(-index)")
+    //选择匹配集合中所有大于给定index的元素
+
+    //:lt() Selector 语法： $(":lt(index)")或$(":lt(-index)")
+    //选择匹配集合中所有索引值小于给定index参数的元素，严格小于不能等于
+    //例：ltdemo.html
+
+
+    //:not() Selector语法： $(":not(selector)")
+    //选择所有元素  去除不匹配  给定的选择器的元素
+</script>
+</body>
+</html>

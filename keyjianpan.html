@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+
+<script>
+    //keydown()  键盘按下时触发  只发生在焦点元素上 表单元素最适合
+   /* $(document).keydown(function(event){
+        alert(event.keyCode); //返回按下的键的代码
+    })*/
+
+    //keypress() 键盘敲击时触发 按下并抬起同一个键
+    //keyup() 键盘释放时触发
+
+    //触发顺序： keydown -》keypress  两者都不触发时 keyup触发
+    $(document).keydown(function(event){
+        alert("keydown"); //返回按下的键的代码
+    });
+    $(document).keypress(function(event){
+        alert("keypress"); //返回按下的键的代码
+    });
+    $(document).keyup(function(event){
+        alert("keyup"); //返回按下的键的代码
+    });
+</script>
+</body>
+</html>

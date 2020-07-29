@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <style>
+        p{
+            width:300px;
+            background-color: #2aabd2;
+        }
+    </style>
+</head>
+<body>
+<p>hh1</p>
+<p>hh2</p>
+<p>hh3</p>
+<p>hh4</p>
+
+
+<script>
+   /* //原生JS 点击弹出p标签内容：
+    var p=document.getElementsByTagName("p");
+    for(var i=0;i<p.length;i++){
+        p[i].onclick=function(){
+            alert(this.innerHTML);
+        }
+    }*/
+
+    //jQuery的鼠标单击事件
+   /* $(function(){
+        $("p").click(function(){
+            alert($(this).html());
+        })
+    })*/
+
+    //鼠标双击 dblclick()
+  /* $(function(){
+       $("p").dblclick(function(){
+           alert($(this).html());
+       })
+   })*/
+
+    //鼠标悬停和离开 hover()
+  /* $(function(){
+       $("p").hover(function(){
+           alert($(this).html());
+       })
+   })
+*/
+    //鼠标按下 mousedown()
+    //鼠标进入元素 mouseenter() 和hover效果一样
+    //鼠标离开元素 mouseleave()
+    //鼠标在元素内移动 mousemove()
+   $(function(){
+       var i=0;
+       $("p").mouseleave(function(){
+           console.log(i++);
+       })
+   })
+    //鼠标离开元素 mouseout()支持事件冒泡
+    //鼠标进入元素 mouseover() 支持事件冒泡
+    //鼠标按键被释放 mouseup()
+</script>
+</body>
+</html>
